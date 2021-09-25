@@ -1,0 +1,209 @@
+title = "gitleaks config"
+
+[[rules]]
+    id = "1"
+    description = "RAWS Access Key"
+    regex = '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'''
+    tags = ["key", "AWS"]
+
+[[rules]]
+    id = "2"
+    description = "AWS Secret Key"
+    regex = '''(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]'''
+    tags = ["key", "AWS"]
+
+[[rules]]
+    id = "3"
+    description = "AWS MWS key"
+    regex = '''amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+    tags = ["key", "AWS", "MWS"]
+
+[[rules]]
+    id = "4"
+    description = "Facebook Secret Key"
+    regex = '''(?i)(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}['\"]'''
+    tags = ["key", "Facebook"]
+
+[[rules]]
+    id = "5"
+    description = "Facebook Client ID"
+    regex = '''(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}['\"]'''
+    tags = ["key", "Facebook"]
+
+[[rules]]
+    id = "6"
+    description = "Twitter Secret Key"
+    regex = '''(?i)twitter(.{0,20})?['\"][0-9a-z]{35,44}['\"]'''
+    tags = ["key", "Twitter"]
+
+[[rules]]
+    id = "7"
+    description = "Twitter Client ID"
+    regex = '''(?i)twitter(.{0,20})?['\"][0-9a-z]{18,25}['\"]'''
+    tags = ["client", "Twitter"]
+
+[[rules]]
+    id = "8"
+    description = "Github Personal Access Token"
+    regex = '''ghp_[0-9a-zA-Z]{36}'''
+    tags = ["key", "Github"]
+[[rules]]
+    id = "9"
+    description = "Github OAuth Access Token"
+    regex = '''gho_[0-9a-zA-Z]{36}'''
+    tags = ["key", "Github"]
+[[rules]]
+    id = "10"
+    description = "Github App Token"
+    regex = '''(ghu|ghs)_[0-9a-zA-Z]{36}'''
+    tags = ["key", "Github"]
+[[rules]]
+    id = "11"
+    description = "Github Refresh Token"
+    regex = '''ghr_[0-9a-zA-Z]{76}'''
+    tags = ["key", "Github"]
+
+[[rules]]
+    id = "12"
+    description = "LinkedIn Client ID"
+    regex = '''(?i)linkedin(.{0,20})?(?-i)[0-9a-z]{12}'''
+    tags = ["client", "LinkedIn"]
+
+[[rules]]
+    id = "13"
+    description = "LinkedIn Secret Key"
+    regex = '''(?i)linkedin(.{0,20})?[0-9a-z]{16}'''
+    tags = ["secret", "LinkedIn"]
+
+[[rules]]
+    id = "14"
+    description = "Slack"
+    regex = '''xox[baprs]-([0-9a-zA-Z]{10,48})?'''
+    tags = ["key", "Slack"]
+
+[[rules]]
+    id = "15"
+    description = "Asymmetric Private Key"
+    regex = '''-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----'''
+    tags = ["key", "AsymmetricPrivateKey"]
+
+[[rules]]
+    id = "16"
+    description = "Google API key"
+    regex = '''AIza[0-9A-Za-z\\-_]{35}'''
+    tags = ["key", "Google"]
+
+[[rules]]
+    id = "17"
+    description = "Google (GCP) Service Account"
+    regex = '''"type": "service_account"'''
+    tags = ["key", "Google"]
+
+[[rules]]
+    id = "18"
+    description = "Heroku API key"
+    regex = '''(?i)heroku(.{0,20})?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+    tags = ["key", "Heroku"]
+
+[[rules]]
+    id = "19"
+    description = "MailChimp API key"
+    regex = '''(?i)(mailchimp|mc)(.{0,20})?[0-9a-f]{32}-us[0-9]{1,2}'''
+    tags = ["key", "Mailchimp"]
+
+[[rules]]
+    id = "20"
+    description = "Mailgun API key"
+    regex = '''((?i)(mailgun|mg)(.{0,20})?)?key-[0-9a-z]{32}'''
+    tags = ["key", "Mailgun"]
+
+[[rules]]
+    id = "21"
+    description = "PayPal Braintree access token"
+    regex = '''access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}'''
+    tags = ["key", "Paypal"]
+
+[[rules]]
+    id = "22"
+    description = "Picatic API key"
+    regex = '''sk_live_[0-9a-z]{32}'''
+    tags = ["key", "Picatic"]
+
+[[rules]]
+    id = "23"
+    description = "SendGrid API Key"
+    regex = '''SG\.[\w_]{16,32}\.[\w_]{16,64}'''
+    tags = ["key", "SendGrid"]
+
+[[rules]]
+    id = "24"
+    description = "Slack Webhook"
+    regex = '''https://hooks.slack.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{24}'''
+    tags = ["key", "slack"]
+
+[[rules]]
+    id = "25"
+    description = "Stripe API key"
+    regex = '''(?i)stripe(.{0,20})?[sr]k_live_[0-9a-zA-Z]{24}'''
+    tags = ["key", "Stripe"]
+
+[[rules]]
+    id = "26"
+    description = "Square access token"
+    regex = '''sq0atp-[0-9A-Za-z\-_]{22}'''
+    tags = ["key", "square"]
+
+[[rules]]
+    id = "27"
+    description = "Square OAuth secret"
+    regex = '''sq0csp-[0-9A-Za-z\\-_]{43}'''
+    tags = ["key", "square"]
+
+[[rules]]
+    id = "28"
+    description = "Twilio API key"
+    regex = '''(?i)twilio(.{0,20})?SK[0-9a-f]{32}'''
+    tags = ["key", "twilio"]
+
+[[rules]]
+    id = "29"
+    description = "Dynatrace ttoken"
+    regex = '''dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}'''
+    tags = ["key", "Dynatrace"]
+
+[[rules]]
+    id = "30"
+    description = "Shopify shared secret"
+    regex = '''shpss_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+
+[[rules]]
+    id = "31"
+    description = "Shopify access token"
+    regex = '''shpat_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+
+[[rules]]
+    id = "32"
+    description = "Shopify custom app access token"
+    regex = '''shpca_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+
+[[rules]]
+    id = "33"
+    description = "Shopify private app access token"
+    regex = '''shppa_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+
+[[rules]]
+    id = "34"
+    description = "PyPI upload token"
+    regex = '''pypi-AgEIcHlwaS5vcmc[A-Za-z0-9-_]{50,1000}'''
+    tags = ["key", "pypi"]
+
+[allowlist]
+    id = "35"
+    description = "Allowlisted files"
+    files = ['''^\.?gitleaks.toml$''',
+    '''(.*?)(png|jpg|gif|doc|docx|pdf|bin|xls|pyc|zip)$''',
+    '''(go.mod|go.sum)$''']

@@ -1,0 +1,14 @@
+
+[allowlist]
+    regexes = ['''linkedin''']
+
+[[rules]]
+    id = "1"
+    [rules.allowlist]
+        regexes = ['''AKIAIO5FODNN7EXAMPLE.*''']
+
+[[rules]]
+    id = "3"
+    [rules.allowlist]
+        regexes = ['''3AKIAIO5FODNN7EXAMPLE.*''']
+        description = "ignore example aws key"
