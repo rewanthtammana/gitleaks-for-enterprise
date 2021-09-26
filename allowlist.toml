@@ -1,7 +1,10 @@
-
+# Global allow list
 [allowlist]
     regexes = ['''linkedin''']
+    description = "Allowlisted files"
+    files = ['''^\.?gitleaks.toml$''', '''(.*?)(png|jpg|gif|doc|docx|pdf|bin|xls|pyc|zip)$''', '''(go.mod|go.sum)$''']
 
+# Rule specific white listing
 [[rules]]
     id = "1"
     [rules.allowlist]
