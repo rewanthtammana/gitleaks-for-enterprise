@@ -49,7 +49,7 @@ for i,entry in enumerate(allowlist_json_config['rules']):
         if entry['id'] == base_id:
             base_json_config['rules'][j]['allowlist'] = entry['allowlist']
 
-print(allowlist_json_config)
+# print(allowlist_json_config)
 # Global allowlist rule set
 if 'allowlist' in allowlist_json_config:
     base_json_config['allowlist'] = allowlist_json_config['allowlist']
