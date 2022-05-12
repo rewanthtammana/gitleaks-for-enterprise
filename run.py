@@ -1,12 +1,24 @@
-import json,toml,re
+import json,toml,re,sys,os.path
+
+if len(sys.argv) < 2:
+    allowlist_toml_file = ""
+else:
+    allowlist_toml_file = sys.argv[1]
 
 base_toml_file = "base.toml"
-allowlist_toml_file = "allowlist.toml"
 output_file = "gitleaks.toml"
 regex_pattern = "^Rule (\d+):"
 
 with open(base_toml_file) as source:
     base_config = toml.loads(source.read())
+
+# If allowlist doesn't exist, use the default base.toml
+if not os.path.isfile(allowlist_toml_file):
+    base_json_config = json.loads(json.dumps(base_config))
+    toml_config = toml.dumps(base_json_config)
+    with open(output_file, 'w') as target:
+        target.write(toml_config)
+        exit(0)
 
 with open(allowlist_toml_file) as source:
     allowlist_config = toml.loads(source.read())
@@ -37,13 +49,15 @@ for i,entry in enumerate(allowlist_json_config['rules']):
         if entry['id'] == base_id:
             base_json_config['rules'][j]['allowlist'] = entry['allowlist']
 
+print(allowlist_json_config)
 # Global allowlist rule set
-if allowlist_json_config['allowlist']:
+if 'allowlist' in allowlist_json_config:
     base_json_config['allowlist'] = allowlist_json_config['allowlist']
 
 # Generate final toml rule set
 toml_config = toml.dumps(base_json_config)
-# print(toml_config)
+print(toml_config)
 
-with open(output_file, 'w') as target:
-    target.write(toml_config)
+# with open(output_file, 'w') as target:
+#     target.write(toml_config)
+    
