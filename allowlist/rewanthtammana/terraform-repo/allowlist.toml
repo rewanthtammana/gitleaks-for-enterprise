@@ -17,7 +17,7 @@
         description = "ignore example aws key"
 
 [[rules]]
-    id = "18"
+    id = "8"
     [rules.allowlist]
         commits = ['''3e40e0a9ef0e43ce88a8a8ab605eeb2e7a7c19fc''']
         description = "ignore example ghp key"
