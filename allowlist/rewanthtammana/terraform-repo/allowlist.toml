@@ -19,5 +19,5 @@
 [[rules]]
     id = "8"
     [rules.allowlist]
-        commits = ['''3e40e0a9ef0e43ce88a8a8ab605eeb2e7a7c19fc''', '''5fa564f938eba0a7460ce0cedf92a73b92fe32ae''']
+        commits = ['''3e40e0a9ef0e43ce88a8a8ab605eeb2e7a7c19fc''', '''5fa564f938eba0a7460ce0cedf92a73b92fe32ae''', '''cd690b41e6a4aceafcec3b13e0117215e04e3f2d''', '''e1e625b00454245d7e774d358caf795bb3a44ab1''']
         description = "ignore example ghp key"
