@@ -15,7 +15,18 @@ Gitleaks customized for enterprise usage. This project allows you to have a cent
 * Use the above generated `gitleaks.toml` as gitleaks repo scanning configuration file
 
 ```bash
-docker run -v ${PWD}:/my-repo zricethezav/gitleaks:latest --path="/my-repo" --repo-config-path="./gitleaks.toml"
+python3 run.py
+gitleaks detect -c ./gitleaks.toml --source /path/to/repo
 ```
 
 For further usage refer to, [https://github.com/zricethezav/gitleaks](https://github.com/zricethezav/gitleaks)
+
+## Installation
+
+### Linux machine
+
+```bash
+pip install -r requirements.txt
+pyinstaller run.py --onefile
+./dist/run
+```
