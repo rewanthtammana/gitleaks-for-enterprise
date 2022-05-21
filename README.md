@@ -4,7 +4,7 @@ Gitleaks customized for enterprise usage. This project allows you to have a cent
 
 ## Disclaimer !
 
-1. The `description` field in `base.toml` is mandatory & it should start with **Rule: <id>**
+1. The `description` field in `base.toml` is mandatory & it should start with **"Rule: <id>"**
 1. The `id` field in `[[rules]]` in `allowlist.toml` is mandatory & it should be an integer
 
 ## Usage
@@ -12,6 +12,7 @@ Gitleaks customized for enterprise usage. This project allows you to have a cent
 * Save base/matching rule set in `base.toml`
 * Save allow list rule set in `allowlist.toml`
 * `python run.py` - This generates `gitleaks.toml` file
+* If there are exceptions added to the list, your execution would be something like this, `python run.py allowlist/$USERNAME/$REPONAME/allowlist.toml`
 * Use the above generated `gitleaks.toml` as gitleaks repo scanning configuration file
 
 ```bash

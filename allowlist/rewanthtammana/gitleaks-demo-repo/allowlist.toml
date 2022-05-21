@@ -1,0 +1,5 @@
+# Rule specific white listing
+[[rules]]
+    id = "8"
+    [rules.allowlist]
+        regexes = ['''ghp_WtfdNeDljtnHfLaVePtZll6NQBqU6c0jiuSX''']

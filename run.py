@@ -1,4 +1,5 @@
 import json,toml,re,sys,os.path
+from sys import exit
 
 if len(sys.argv) < 2:
     allowlist_toml_file = ""
@@ -16,9 +17,11 @@ with open(base_toml_file) as source:
 if not os.path.isfile(allowlist_toml_file):
     base_json_config = json.loads(json.dumps(base_config))
     toml_config = toml.dumps(base_json_config)
-    with open(output_file, 'w') as target:
-        target.write(toml_config)
-        exit(0)
+    print(toml_config)
+    exit(0)
+    # with open(output_file, 'w') as target:
+    #     target.write(toml_config)
+    #     exit(0)
 
 with open(allowlist_toml_file) as source:
     allowlist_config = toml.loads(source.read())
