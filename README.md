@@ -1,8 +1,16 @@
 # Gitleaks for enterprise
 
-Gitleaks customized for enterprise usage. This project allows you to have a centralized rule management.
+Gitleaks is customized for use across multiple projects/enterprises. This project allows you to have a centralized detection rule management.
 
-## Architecture Design
+## Architecture
+
+When we use Gitleaks with `"n"` number of projects, the architecture will be similar to below.
+
+### With default gitleaks design
+
+![Gitleaks-Default-Design.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652714624519/7Tl6T_k-D.png)
+
+### With customized gitleaks for enterprise design
 
 ![Gitleaks-For-Enterprises-Design.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652714633471/wZ4day3ry.png)
 
