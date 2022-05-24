@@ -2,6 +2,10 @@
 
 Gitleaks customized for enterprise usage. This project allows you to have a centralized rule management.
 
+## Architecture Design
+
+![Gitleaks-For-Enterprises-Design.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652714633471/wZ4day3ry.png)
+
 ## Disclaimer !
 
 ### base.toml
@@ -37,7 +41,7 @@ Gitleaks customized for enterprise usage. This project allows you to have a cent
         commits = ["commit-id-here"]
         files = ['''keys/eGuardKey.id_dsa$''']
 ```
-  
+
 ## Usage
 
 * By default all detection rules are in in `base.toml`
