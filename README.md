@@ -54,11 +54,11 @@ When we use Gitleaks with `"n"` number of projects, the architecture will be sim
 
 * By default all detection rules are in in `base.toml`
 * Save your allowlist rules in `allowlist/$USERNAME/$REPONAME/allowlist.toml`
-* `python run.py <allowlist-path> > gitleaks.toml` - Combines your repo specific `allowlist.toml` & `base.toml` to generatee `gitleaks.toml` file
+* `python run.py -a <allowlist-file-path> > gitleaks.toml` - Combines your repo specific `allowlist.toml` & `base.toml` to generate `gitleaks.toml` file
 * Use the above generated `gitleaks.toml` as gitleaks repo scanning configuration file
 
 ```bash
-python3 run.py allowlist/$USERNAME/$REPONAME/allowlist.toml > gitleaks.toml
+python3 run.py -a allowlist/$USERNAME/$REPONAME/allowlist.toml > gitleaks.toml
 gitleaks detect -c ./gitleaks.toml --source /path/to/repo -v
 ```
 
