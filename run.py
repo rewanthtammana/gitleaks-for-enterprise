@@ -1,12 +1,14 @@
-import json,toml,re,sys,os.path
+import json,toml,re,sys,os.path,argparse
 from sys import exit
 
-if len(sys.argv) < 2:
-    allowlist_toml_file = ""
-else:
-    allowlist_toml_file = sys.argv[1]
+parser = argparse.ArgumentParser(description="Just an example", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument("-b", "--base-toml-file", help="Base detection rule set file location", default="./base.toml")
+parser.add_argument("-a", "--allowlist-toml-file", help="Allowlist file location", default="")
+args = parser.parse_args()
+config = vars(args)
 
-base_toml_file = "base.toml"
+base_toml_file = config["base_toml_file"]
+allowlist_toml_file = config["allowlist_toml_file"]
 output_file = "gitleaks.toml"
 regex_pattern = "^Rule (\d+):"
 
