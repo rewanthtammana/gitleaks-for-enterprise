@@ -2,4 +2,4 @@
 [[rules]]
     id = "8"
     [rules.allowlist]
-        regexes = ['''ghp_WtfdNeDljtnHfLaVePtZll6NQBqU6c0jiuSX''', '''ghp_*''']
+        regexes = ['''ghp_WtfdNeDljtnHfLaVePtZll6NQBqU6c0jiuSX''']
